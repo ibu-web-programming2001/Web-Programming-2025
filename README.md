@@ -9,7 +9,7 @@ Welcome to the Web Programming course! This course is designed to introduce you 
 This course provides a comprehensive introduction to web programming concepts and techniques. Through a combination of lectures, practical exercises, and projects, you will learn the basics of PHP, MySql, HTML, CSS, JavaScript, and more.
 
 - Lecturer Dzelila Mehanovic - dzelila.mehanovic@ibu.edu.ba
-  - Lab Assistants: 
+- Lab Assistants: 
     - Amila Causevic - amila.causevic@ibu.edu.ba
     - Amela Vatres-Mudzelet - amela.vatres@ibu.edu.ba
     - Benjamin Peljto - benjamin.peljto@ibu.edu.ba
