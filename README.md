@@ -12,10 +12,11 @@ This course provides a comprehensive introduction to web programming concepts an
 
 For any questions or concerns regarding the course, please contact:
 
-- Lecturer Dzelila Mehanovic 
-    - email: dzelila.mehanovic@ibu.edu.ba
-    - office Location: B, 413
-    
+- Lecturer:
+    - Dzelila Mehanovic 
+        - email: dzelila.mehanovic@ibu.edu.ba
+        - office Location: B, 413
+
 - Lab Assistants: 
     - Amila Causevic 
         - email: amila.causevic@ibu.edu.ba
