@@ -8,11 +8,24 @@ Welcome to the Web Programming course! This course is designed to introduce you 
 
 This course provides a comprehensive introduction to web programming concepts and techniques. Through a combination of lectures, practical exercises, and projects, you will learn the basics of PHP, MySql, HTML, CSS, JavaScript, and more.
 
-- Lecturer Dzelila Mehanovic - dzelila.mehanovic@ibu.edu.ba
+## Contact Information
+
+For any questions or concerns regarding the course, please contact:
+
+- Lecturer Dzelila Mehanovic 
+    - email: dzelila.mehanovic@ibu.edu.ba
+    - office Location: B, 413
+    
 - Lab Assistants: 
-    - Amila Causevic - amila.causevic@ibu.edu.ba
-    - Amela Vatres-Mudzelet - amela.vatres@ibu.edu.ba
-    - Benjamin Peljto - benjamin.peljto@ibu.edu.ba
+    - Amila Causevic 
+        - email: amila.causevic@ibu.edu.ba
+        - office Location: B, 411
+    - Amela Vatres-Mudzelet 
+        - email: amela.vatres@ibu.edu.ba 
+        - office Location: B, 413
+    - Benjamin Peljto 
+        - email: benjamin.peljto@ibu.edu.ba 
+        - office Location: B, 411
 
 ## Weekly Breakdown
 
@@ -52,26 +65,5 @@ This course provides a comprehensive introduction to web programming concepts an
 
 This course material is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact Information
 
-For any questions or concerns regarding the course, please contact:
 
-### Professor
-
-**Name:** Assist. Prof. Dr. Dzlila Mehanovic
-**Email:** dzelila.mehanovic@ibu.edu.ba  
-**Office Location:** B, 413
-
-### Teaching Assistants
-
-1. **Name:** TA Amela Vatres Mudzelet   
-   **Email:** amela.vatres@ibu.edu.ba  
-   **Office Location:** B, 413
-
-2. **Name:** TA Amila Čaušević  
-   **Email:** amila.causevic@ibu.edu.ba  
-   **Office Location:** B, 411
-
-3. **Name:** TA Benjamin Peljto
-   **Email:** benjamin.peljto@ibu.edu.ba  
-   **Office Location:** B, 411
