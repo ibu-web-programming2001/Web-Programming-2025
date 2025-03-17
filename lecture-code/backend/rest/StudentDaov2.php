@@ -1,14 +1,12 @@
 <?php
 require_once __DIR__ . "/../config.php";
 
-class BaseDaov1
+class StudentDaov2
 {
-    protected $connection;
-    private $table_name;
-
-    public function __construct($table_name)
+    private $connection;
+    private $table_name = "students";
+    public function __construct()
     {
-        $this->table_name = $table_name;
         try {
             $this->connection = new PDO(
                 "mysql:host=" . Config::DB_HOST() . ";dbname=" . Config::DB_NAME() . ";port=" . Config::DB_PORT(),
@@ -36,7 +34,28 @@ class BaseDaov1
     {
         $query = "SELECT * FROM " . $this->table_name . " WHERE id = ?";
         $stmt = $this->connection->prepare($query);
-        $stmt->execute([(int) $id]);
+        $stmt->execute([(int) (int)$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function add($name, $email)
+    {
+        $query = "INSERT INTO " . $this->table_name . " (name, email) VALUES (?, ?)";
+        $stmt = $this->connection->prepare($query);
+        return $stmt->execute([$name, $email]);
+    }
+
+    public function update($id, $name, $email)
+    {
+        $query = "UPDATE " . $this->table_name . " SET name = ?, email = ? WHERE id = ?";
+        $stmt = $this->connection->prepare($query);
+        return $stmt->execute([$name, $email, (int) $id]);
+    }
+
+    public function delete($id)
+    {
+        $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
+        $stmt = $this->connection->prepare($query);
+        return $stmt->execute([(int) $id]);
     }
 }
