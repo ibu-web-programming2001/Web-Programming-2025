@@ -23,13 +23,17 @@ class StudentServicev2 extends BaseService
     {
         $entity['password'] = md5($entity['password']);
         return parent::add($entity);
+        unset($entity['password']);
+        
         /*
-        example
-        send an email
-        if(!validateField($entity['first_name'])){
+        //example
+        $mail_dao = new MailDao();
+        $mail_dao->send_email($entity["email"], "Welcome");
+        if(!validateField($entity, "first_name")){
             //error
         }
-        */
+            */
+        
     }
 
     public function delete_student($id)

@@ -16,7 +16,7 @@ class StudentServicev1
 
     public function get_by_id($id)
     {
-        return $this->student_dao->get_all($id);
+        return $this->student_dao->get_by_id($id);
     }
 
     public function add($entity)
