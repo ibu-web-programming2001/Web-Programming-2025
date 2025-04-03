@@ -1,12 +1,12 @@
 <?php
 
 require __DIR__ . '/../../../vendor/autoload.php';
-use OpenApi\Annotations as OA;
 
-define('BASE_URL', 'http://localhost:83/project/backend/');
-
-//$openapi = \OpenApi\Generator::scan([ __DIR__ . '/../../../rest/routes/']);
-//$openapi = \OpenApi\Generator::scan([__DIR__ . '/../../../rest/routes/StudentRoutes.php']);
+if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1'){
+    define('BASE_URL', 'http://localhost:83/project/backend/');
+} else {
+    define('BASE_URL', 'https://add-production-server-after-deployment/backend/');
+}
 
 $openapi = \OpenApi\Generator::scan([
     __DIR__ . '/doc_setup.php',
