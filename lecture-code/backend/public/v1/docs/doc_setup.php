@@ -6,14 +6,15 @@
  *   description="Web programming API",
  *   version="1.0",
  *   @OA\Contact(
- *     email="web2001programming@gmail.com",
- *     name="Web Programming"
+ *     email="becir.isakovic@ibu.edu.ba",
+ *     name="Becir Isakovic"
  *   )
  * ),
- * @OA\Server(
- *     url="http://localhost:83/project/backend/",
- *     description="API server"
- * ),
+ * @OA\OpenApi(
+ *   @OA\Server(
+ *       url=BASE_URL
+ *   )
+ * )
  * @OA\SecurityScheme(
  *     securityScheme="ApiKey",
  *     type="apiKey",
