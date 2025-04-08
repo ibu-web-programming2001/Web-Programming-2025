@@ -1,5 +1,6 @@
 {
   "require": {
-    "flightphp/core": "^3.15"
+    "flightphp/core": "^3.15",
+     "zircote/swagger-php": "3.3.7"
   }
 }
