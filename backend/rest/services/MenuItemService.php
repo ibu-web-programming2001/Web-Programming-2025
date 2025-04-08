@@ -12,5 +12,14 @@ class MenuItemService extends BaseService {
     public function getByCategory($category) {
         return $this->dao->getByCategory($category);
     }
+
+    public function createMenuItem($data) {
+        // Example of business logic (e.g., ensure price is positive)
+        if ($data['price'] <= 0) {
+            throw new Exception('Price must be a positive value.');
+        }
+
+        return $this->create($data);
+    }
 }
 ?>

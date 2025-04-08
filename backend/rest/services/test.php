@@ -1,6 +1,9 @@
 <?php
-require_once 'MenuItemController.php';
+require_once 'MenuItemService.php';
 
-$controller = new MenuItemController();
-$controller->handleRequest(); // This will handle POST and GET requests.
+$menu_item_service = new MenuItemService();
+$menus = $menu_item_service->createMenuItem(); 
+print_r($menus);
+$categories = $menu_item_service->getByCategory(); 
+print_r($categories);
 ?>
