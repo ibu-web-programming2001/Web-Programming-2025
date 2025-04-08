@@ -2,7 +2,7 @@
 class Database {
     // private static $host = 'localhost';
     private static $host = '127.0.0.1'; //if you face with error "Connection failed: SQLSTATE[HY000] [2002] No such file or directory" try this instead of localhost for host
-    private static $dbName = 'restoraount';  //restaurant_db
+    private static $dbName = 'restaurant_db ';  
     private static $username = 'root';
     private static $password = '';
     private static $connection = null;

@@ -8,11 +8,10 @@ class MenuItemService extends BaseService {
         parent::__construct($dao);
     }
 
-    // Custom business logic can be added here.
     public function getByCategory($category) {
         return $this->dao->getByCategory($category);
     }
-
+    
     public function createMenuItem($data) {
         // Example of business logic (e.g., ensure price is positive)
         if ($data['price'] <= 0) {
