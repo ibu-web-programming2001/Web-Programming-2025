@@ -31,14 +31,14 @@ Flight::route("GET /students", function () {
  *         in="query",
  *         required=true,
  *         description="Student ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\Response(
  *         response=200,
  *         description="Fetch individual student."
  *     ),
  *     @OA\Response(
- *         response=400,
+ *         response=500,
  *         description="Bad request - missing or invalid ID."
  *     )
  * )
@@ -60,14 +60,14 @@ Flight::route("GET /student_by_id", function () {
  *         in="path",
  *         required=true,
  *         description="Student ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\Response(
  *         response=200,
  *         description="Fetch individual student."
  *     ),
  *     @OA\Response(
- *         response=400,
+ *         response=500,
  *         description="Bad request - missing or invalid ID."
  *     )
  * )
@@ -90,7 +90,7 @@ Flight::route("GET /students/@id", function ($id) {
  *         in="path",
  *         required=true,
  *         description="Student ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\Response(
  *         response=200,
@@ -150,10 +150,18 @@ Flight::route("DELETE /students/@id", function ($id) {
  */
 Flight::route("POST /student", function () {
     $request = Flight::request()->data->getData();
-    Flight::json([
-        'message' => "Student added successfully",
-        'data' => Flight::student_service()->add($request)
-    ]);
+    $response = Flight::student_service()->add($request);
+    if(count($response) > 0){
+        Flight::json([
+            'message' => "Student added successfully",
+            'data' => $response
+        ]);
+    } else {
+        Flight::json([
+            'message' => "Email already exists",
+            'data' => []
+        ]);
+    }
 });
 
 /**
@@ -170,7 +178,7 @@ Flight::route("POST /student", function () {
  *         in="path",
  *         required=true,
  *         description="Student ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\RequestBody(
  *         description="Updated student information",
