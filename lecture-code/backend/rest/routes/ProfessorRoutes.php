@@ -30,7 +30,7 @@ Flight::route("GET /professors", function () {
  *         in="query",
  *         required=true,
  *         description="Professor ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\Response(
  *         response=200,
@@ -59,7 +59,7 @@ Flight::route("GET /professor_by_id", function () {
  *         in="path",
  *         required=true,
  *         description="Professor ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\Response(
  *         response=200,
@@ -89,7 +89,7 @@ Flight::route("GET /professors/@id", function ($id) {
  *         in="path",
  *         required=true,
  *         description="Professor ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\Response(
  *         response=200,
@@ -169,7 +169,7 @@ Flight::route("POST /professor", function () {
  *         in="path",
  *         required=true,
  *         description="Professor ID",
- *         example=1
+ *         @OA\Schema(type="integer", example=1)
  *     ),
  *     @OA\RequestBody(
  *         description="Updated professor information",
