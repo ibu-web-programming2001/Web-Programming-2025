@@ -11,7 +11,11 @@
  *   )
  * ),
  * @OA\Server(
- *     url=BASE_URL,
+ *     url=LOCALSERVER,
+ *     description="API server"
+ * ),
+ * @OA\Server(
+ *     url=PRODSERVER,
  *     description="API server"
  * ),
  * @OA\SecurityScheme(
