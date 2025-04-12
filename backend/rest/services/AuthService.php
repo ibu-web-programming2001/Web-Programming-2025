@@ -16,6 +16,7 @@ class AuthService extends BaseService {
     }
 
     public function register($entity) {   
+        
         if (empty($entity['email']) || empty($entity['password'])) {
             return ['success' => false, 'error' => 'Email and password are required.'];
         }
@@ -30,8 +31,9 @@ class AuthService extends BaseService {
         $entity = parent::add($entity);
 
         unset($entity['password']);
-
-        return ['success' => true, 'data' => $entity];              
+        
+        return ['success' => true, 'data' => $entity];  
+                   
     }
 
     public function login($entity) {   

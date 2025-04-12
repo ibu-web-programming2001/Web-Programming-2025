@@ -14,16 +14,13 @@
 
 /**
  * @OA\Server(
- *      url=LOCALSERVER,
+ *      url="http://localhost/web-programming-2025/backend",
  *      description="API server"
  * )
 */
-/**
- * @OA\Server(
- *      url=PRODSERVER,
- *      description="API server"
- * )
-*/
+
+
+
 /**
  * @OA\SecurityScheme(
  *     securityScheme="ApiKey",

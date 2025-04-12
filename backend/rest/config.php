@@ -9,7 +9,7 @@ class Config
 {
     public static function DB_NAME()
     {
-        return 'restaurant_db'; 
+        return 'restoraount'; //restaurant_db
     }
     public static function DB_PORT()
     {

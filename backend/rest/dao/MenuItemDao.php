@@ -2,8 +2,22 @@
 require_once 'BaseDao.php';
 
 class MenuItemDao extends BaseDao {
-    public function __construct() {
-        parent::__construct("menu_items");
+    private $connection;
+    private $table_name = "menu_items";
+    public function __construct()
+    {
+        try {
+            $host = 'localhost';
+            $dbName = 'restoraount';
+            $dbPort = 3306;
+            $username = 'root';
+            $password = '';
+
+            $this->connection = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            throw $e;
+        }
     }
 
     public function getByCategory($category) {

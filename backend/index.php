@@ -6,9 +6,9 @@ require 'rest/services/RestaurantService.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 
 Flight::register('restaurantService', 'RestaurantService');
@@ -37,7 +37,7 @@ Flight::route('/*', function() {
     }
 });
 
-require_once __DIR__ .'rest/routes/AuthRoutes.php';
+require_once __DIR__ .'/rest/routes/AuthRoutes.php';
 require_once __DIR__ . '/rest/routes/RestaurantRoutes.php';
 
 
