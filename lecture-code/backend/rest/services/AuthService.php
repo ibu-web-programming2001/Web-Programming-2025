@@ -1,6 +1,7 @@
 <?php
 require_once 'BaseService.php';
 require_once __DIR__ . '/../dao/AuthDao.php';
+require_once __DIR__ . '/../../data/Roles.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
@@ -10,6 +11,7 @@ class AuthService extends BaseService {
         $this->auth_dao = new AuthDao();
         parent::__construct(new AuthDao);
     }
+
 
     public function get_user_by_email($email){
         return $this->auth_dao->get_user_by_email($email);
@@ -26,7 +28,7 @@ class AuthService extends BaseService {
         }
 
         $entity['password'] = password_hash($entity['password'], PASSWORD_BCRYPT);
-
+        $entity['role'] = Roles::USER; 
         $entity = parent::add($entity);
 
         unset($entity['password']);
@@ -40,9 +42,9 @@ class AuthService extends BaseService {
         }
 
         $user = $this->auth_dao->get_user_by_email($entity['email']);
-        if(!$user){
+        /*if(!$user){
             return ['success' => false, 'error' => 'Invalid username or password.'];
-        }
+        }*/
 
         if(!$user || !password_verify($entity['password'], $user['password']))
             return ['success' => false, 'error' => 'Invalid username or password.'];
@@ -53,7 +55,8 @@ class AuthService extends BaseService {
             'user' => $user,
             'iat' => time(),
             // If this parameter is not set, JWT will be valid for life. This is not a good approach
-            'exp' => time() + (60 * 60 * 24) // valid for day
+            'exp' => time() + (60 * 60 * 24), // valid for day,
+            'role' => $user['role']
         ];
 
         $token = JWT::encode(
