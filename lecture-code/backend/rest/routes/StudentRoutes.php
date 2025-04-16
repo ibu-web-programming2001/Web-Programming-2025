@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../../data/Roles.php';
 
 /**
  * @OA\Get(
@@ -16,7 +17,7 @@
  */
 Flight::route("GET /students", function () {
     //Flight::json(Flight::request()->getHeaders());
-    Flight::auth_middleware()->authorizeRole('admin');
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     //$user = Flight::get('user');
     //Flight::json(Flight::student_service()->get_all($user->id));
     Flight::json(Flight::student_service()->get_all());
@@ -188,7 +189,12 @@ Flight::route("POST /student", function () {
  *         description="Updated student information",
  *         required=true,
  *         @OA\JsonContent(
- *             @OA\Property(property="name", type="string", example="Demo", description="Student name"),
+ *             @OA\Property(
+ *              property="name", 
+ *              type="string", 
+ *              example="Demo", 
+ *              description="Student name"
+ *             ),
  *             @OA\Property(property="email", type="string", example="demo@gmail.com", description="Student email")
  *         )
  *     ),
