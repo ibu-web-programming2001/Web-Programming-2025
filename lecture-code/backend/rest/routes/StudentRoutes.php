@@ -15,6 +15,10 @@
  * )
  */
 Flight::route("GET /students", function () {
+    //Flight::json(Flight::request()->getHeaders());
+    Flight::auth_middleware()->authorizeRole('admin');
+    //$user = Flight::get('user');
+    //Flight::json(Flight::student_service()->get_all($user->id));
     Flight::json(Flight::student_service()->get_all());
 });
 
