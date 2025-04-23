@@ -21,6 +21,16 @@ class StudentDaov4 extends BaseDaov2
         return $this->query_unique('SELECT * FROM ' . $this->table_name . ' WHERE id=:id', ['id' => $id]);
     }
 
+    public function get_by_email($email)
+    {
+        return $this->query_unique('SELECT * FROM ' . $this->table_name . ' WHERE email=:email', ['email' => $email]);
+    }
+
+    public function get_by_department($department_id)
+    {
+        return $this->query_unique('SELECT * FROM ' . $this->table_name . ' WHERE department_id=:department_id', ['department_id' => $department_id]);
+    }
+
     public function count_students_paginated($search)
     {
         $query = "SELECT COUNT(*) AS count
