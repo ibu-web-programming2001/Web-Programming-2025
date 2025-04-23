@@ -16,11 +16,13 @@ require_once __DIR__ . '/../../data/Roles.php';
  * )
  */
 Flight::route("GET /students", function () {
-    //Flight::json(Flight::request()->getHeaders());
-    Flight::auth_middleware()->authorizeRole(Roles::USER);
-    //$user = Flight::get('user');
-    //Flight::json(Flight::student_service()->get_all($user->id));
-    Flight::json(Flight::student_service()->get_all());
+    Flight::auth_middleware()->authorizeRoles([Roles::USER, Roles::ADMIN]);
+    $user = Flight::get('user');
+    if($user->role === Roles::ADMIN){
+        Flight::json(Flight::student_service()->get_all());
+    } else{
+        Flight::json(Flight::student_service()->get_department_students($user->department_id));
+    }
 });
 
 /**
