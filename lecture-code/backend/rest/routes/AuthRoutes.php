@@ -17,7 +17,7 @@ Flight::group('/auth', function() {
      *         @OA\MediaType(
      *             mediaType="application/json",
      *             @OA\Schema(
-     *                 required={"password", "email"},
+     *                 required={"password", "email", "department_id"},
      *                 @OA\Property(
      *                     property="password",
      *                     type="string",
@@ -29,6 +29,12 @@ Flight::group('/auth', function() {
      *                     type="string",
      *                     example="demo@gmail.com",
      *                     description="User email"
+     *                 ),
+     *                @OA\Property(
+     *                     property="department_id",
+     *                     type="string",
+     *                     example="1",
+     *                     description="User department ID"
      *                 )
      *             )
      *         )
