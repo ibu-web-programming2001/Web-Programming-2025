@@ -2,23 +2,14 @@
 require_once 'BaseDao.php';
 
 class RestaurantDao extends BaseDao {
-    private $connection;
-    private $table_name = "restaurants";
+    protected $table_name;
+
     public function __construct()
     {
-        try {
-            $host = 'localhost';
-            $dbName = 'restoraount';
-            $dbPort = 3306;
-            $username = 'root';
-            $password = '';
-
-            $this->connection = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            throw $e;
-        }
+        $this->table_name = "restaurants";
+        parent::__construct($this->table_name);
     }
+
     public function get_by_id($id){
         return $this->getById($id);
     }
@@ -38,7 +29,6 @@ class RestaurantDao extends BaseDao {
         $this->insert($restaurant);
         return $restaurant;
     }
-
 
     public function partial_update($id, $restaurant){
         return $this->update($id, $restaurant);

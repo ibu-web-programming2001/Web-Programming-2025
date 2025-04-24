@@ -19,7 +19,8 @@ Flight::register('auth_middleware', "AuthMiddleware");
 Flight::route('/*', function() {
     if(
         strpos(Flight::request()->url, '/auth/login') === 0 ||
-        strpos(Flight::request()->url, '/auth/register') === 0
+        strpos(Flight::request()->url, '/auth/register') === 0 ||
+        strpos(Flight::request()->url, '/restaurant') === 0 
     ) {
         return TRUE;
     } else {

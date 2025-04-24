@@ -37,6 +37,17 @@ class BaseDao
         return reset($results);
     }
 
+    public function getAll() {
+        $stmt = $this->connection->prepare("SELECT * FROM " . $this->table_name);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function getById($id) {
+        $stmt = $this->connection->prepare("SELECT * FROM " . $this->table_name . " WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
     public function add($entity)
     {
         $query = "INSERT INTO " . $this->table_name . " (";

@@ -18,7 +18,7 @@
  * )
  */
 Flight::route('GET /restaurant', function(){
-    Flight::auth_middleware()->authorizeRole(Roles::USER);
+   // Flight::auth_middleware()->authorizeRole(Roles::USER);
     $location = Flight::request()->query['location'] ?? null;
     Flight::json(Flight::restaurantService()->get_restaurants($location));
 });

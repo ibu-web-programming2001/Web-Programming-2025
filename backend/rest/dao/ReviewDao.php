@@ -2,22 +2,12 @@
 require_once 'BaseDao.php';
 
 class ReviewDao extends BaseDao {
-    private $connection;
-    private $table_name = "reviews";
+    protected $table_name;
+
     public function __construct()
     {
-        try {
-            $host = 'localhost';
-            $dbName = 'restoraount';
-            $dbPort = 3306;
-            $username = 'root';
-            $password = '';
-
-            $this->connection = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            throw $e;
-        }
+        $this->table_name = "reviews";
+        parent::__construct($this->table_name);
     }
     public function getByMenuItem($menu_item_id) {
         $stmt = $this->connection->prepare("SELECT * FROM reviews WHERE menu_item_id = :menu_item_id");

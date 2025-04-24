@@ -2,22 +2,12 @@
 require_once 'BaseDao.php';
 
 class OrderDao extends BaseDao {
-    private $connection;
-    private $table_name = "orders";
+    protected $table_name;
+
     public function __construct()
     {
-        try {
-            $host = 'localhost';
-            $dbName = 'restoraount';
-            $dbPort = 3306;
-            $username = 'root';
-            $password = '';
-
-            $this->connection = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            throw $e;
-        }
+        $this->table_name = "orders";
+        parent::__construct($this->table_name);
     }
 
     public function getByUserId($user_id) {
