@@ -1,7 +1,10 @@
 {
   "require": {
     "flightphp/core": "^3.15",
-     "zircote/swagger-php": "3.3.7",
+    "zircote/swagger-php": "3.3.7",
     "firebase/php-jwt": "^6.11"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
   }
 }
