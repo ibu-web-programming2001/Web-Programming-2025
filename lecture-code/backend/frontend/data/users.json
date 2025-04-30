@@ -1,0 +1,16 @@
+[
+    {   
+        "id": 1, 
+        "name": "STD1",
+        "email": "std1@stu.ibu.edu.ba",
+        "password": "12", 
+        "admin": true
+    },
+    {   
+        "id": 2,
+        "name": "STD2",
+        "email": "std2@stu.ibu.edu.ba",
+        "password": "123",
+        "admin": false
+    }    
+]
