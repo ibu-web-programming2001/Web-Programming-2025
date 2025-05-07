@@ -26,7 +26,7 @@ let StudentService = {
                 }
             },
             submitHandler: function (form) {
-              var student = Object.fromEntries(new FormData(form).entries());
+              let student = Object.fromEntries(new FormData(form).entries());
               StudentService.addStudent(student);
               form.reset();
             },
@@ -34,7 +34,7 @@ let StudentService = {
        
         $("#editStudentForm").validate({
             submitHandler: function (form) {
-              var student = Object.fromEntries(new FormData(form).entries());
+              let student = Object.fromEntries(new FormData(form).entries());
               StudentService.editStudent(student);
            
             },
