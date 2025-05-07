@@ -1,6 +1,30 @@
 let StudentService = {
     init: function () {
         $("#addStudentForm").validate({
+             rules: {
+                name: 'required',
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 20
+                }
+            },
+            messages: {
+                name: 'Please enter your name',
+                email: {
+                    required: 'Please enter your email',
+                    email: 'Please enter a valid email address'
+                },
+                password: {
+                    required: 'Please enter a password',
+                    minlength: 'Password must be at least 8 characters long',
+                    maxlength: 'Password cannot be longer than 20 characters',
+                }
+            },
             submitHandler: function (form) {
               var student = Object.fromEntries(new FormData(form).entries());
               StudentService.addStudent(student);
