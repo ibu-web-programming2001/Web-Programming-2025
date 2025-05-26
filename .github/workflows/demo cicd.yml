@@ -36,7 +36,7 @@ jobs:
         echo "Running fake test..."
         echo "<?php echo 'All tests passed ✔️';" > test.php
         php test.php
-php-second:
+  php-second:
     runs-on: ubuntu-latest
 
     steps:
