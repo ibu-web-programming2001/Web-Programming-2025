@@ -36,3 +36,32 @@ jobs:
         echo "Running fake test..."
         echo "<?php echo 'All tests passed ✔️';" > test.php
         php test.php
+php-second:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        extensions: mbstring, intl, pdo, pdo_mysql
+
+    - name: Show PHP version
+      run: php -v
+
+    - name: Install Composer dependencies
+      run: |
+        if [ -f composer.json ]; then
+          composer install --prefer-dist --no-progress --no-suggest
+        else
+          echo "No composer.json found. Skipping composer install."
+        fi
+
+    - name: Run Dummy Tests
+      run: |
+        echo "Running fake test..."
+        echo "<?php echo 'All tests passed ✔️';" > test.php
+        php test.php
