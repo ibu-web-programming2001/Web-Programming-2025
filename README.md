@@ -21,9 +21,9 @@ For any questions or concerns regarding the course, please contact:
     - Amila Causevic 
         - email: amila.causevic@ibu.edu.ba
         - office Location: B, 411
-    - Amela Vatres-Mudzelet 
-        - email: amela.vatres@ibu.edu.ba 
-        - office Location: B, 413
+    - Ilma Gusinac 
+        - email: ilma.gusinac@ibu.edu.ba 
+        - office Location: B, 411
     - Benjamin Peljto 
         - email: benjamin.peljto@ibu.edu.ba 
         - office Location: B, 411
