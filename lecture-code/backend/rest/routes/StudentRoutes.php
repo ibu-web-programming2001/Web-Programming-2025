@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../../data/Roles.php';
 
 /**
  * @OA\Get(
@@ -15,7 +16,13 @@
  * )
  */
 Flight::route("GET /students", function () {
-    Flight::json(Flight::student_service()->get_all());
+    $user = Flight::get('user');
+    Flight::auth_middleware()->authorizeRoles([Roles::USER, Roles::ADMIN]);
+    if($user->role === Roles::ADMIN){
+        Flight::json(Flight::student_service()->get_all());
+    } else{
+        Flight::json(Flight::student_service()->get_department_students($user->department_id));
+    }
 });
 
 /**
